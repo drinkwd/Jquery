@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,ul,h5{margin: 0;padding: 0;}
+        .clear{zoom: 1}
+        .clear:after{content: '';display: block;clear: both}
+        li{list-style: none}
+        a{text-decoration: none;color: green;font-size: 12px;}
+        .wrap{ width: 600px;margin: 30px auto;}
+        .top{background: gray;padding: 12px 8px 0 7px;}
+        .top h5{float: left;vertical-align: middle}
+        .top li{height: 6px;width: 6px;float: left;background: white;
+            margin: 4px 2px 0 5px;display: inline;vertical-align: middle}
+        button{margin:0 0 12px 2px}
+        .top a {float: right;}
+        .bottom{text-align: center}
+        .bottom li{float: left;margin-top: 5px;padding-left: 30px}
+        .bottom a{display: block;}
+        strong{font-size: 12px;text-align: center;line-height: 20px;display: block}
+        img{
+            width: 110px;border: none;vertical-align: top}
+
+    </style>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="top clear">
+        <h5>卡通动漫</h5>
+        <ul class="topul">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button id="btn_left">上一页</button>
+        <button id="btn_right">下一页</button>
+        <a href="">更多》》</a>
+    </div>
+    <ul class="bottom clear">
+        <li>
+            <a href="#">
+                <img src="img/a.jpg">
+                <strong>海贼王</strong>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="img/a.jpg">
+                <strong>海贼王</strong>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="img/a.jpg">
+                <strong>海贼王</strong>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="img/a.jpg">
+                <strong>海贼王</strong>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

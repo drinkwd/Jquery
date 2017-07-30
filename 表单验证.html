@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('form :input.required').each(function () {
+                var required=$('<strong class="high">*</strong>');
+                $(this).parent().append(required);
+            })
+            $('form :input').blur(function () {
+                var parent=$(this).parent();
+                parent.find('.formips').remove();
+                if($(this).is('#username'))
+                {
+                    if(this.value==""||this.value.length<6)
+                    {
+                        var error='请输入至少6位的用户名';
+                        parent.append('<span class="formips onError">'+error+'</span>')
+                    }
+                    else
+                    {
+                        var ok='输入正确';
+                        parent.append('<span class="formips onError">'+ok +'</span>')
+                    }
+                }
+            }).keyup(function () {
+                $(this).triggerHandler("blur");
+            }).focus(function () {
+                $(this).triggerHandler("blur");
+            })
+
+        })
+    </script>
+</head>
+<body>
+<form method="post" action="#">
+    <div class="int">
+        <label for="username">用户名</label>
+        <input type="text" id="username" class="required" />
+    </div>
+    <div class="int">
+        <label for="email">邮箱：</label>
+        <input type="text" id="email" class="required" />
+    </div>
+    <div class="int">
+        <label for="personinfo">个人资料</label>
+        <input type="text" id="personinfo"  />
+    </div>
+    <div class="int">
+        <input type="submit" id="send" value="提交" />
+        <input type="reset" id="res" value="重置"/>
+    </div>
+</form>
+</body>
+</html>

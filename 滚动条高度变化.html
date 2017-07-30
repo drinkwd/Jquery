@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{display: inline-block;background: red;}
+    </style>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            var comment=$('#comment');
+            $('.bigger').click(function () {
+                //判断评论框是否处于动画状态
+                if(!comment.is(':animated'))
+                {
+                        comment.animate({scrollTop:'-=50'},400);
+                }
+
+            });
+            $('.smaller').click(function () {
+                if(!comment.is(':animated'))
+                {
+                    comment.animate({scrollTop:'+=50'},400);
+                }
+
+            })
+            $('span').mouseover(function () {
+                $(this).css('cursor','pointer');
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="msg">
+    <div class="msg_caption">
+        <span class="bigger">向上</span>
+        <span class="smaller">向下</span>
+    </div>
+    <div>
+        <textarea id="comment" rows="8" cols="20">
+            多行文本框高度变化多行文本框高度变化多行文本框高度变化多行文本框高度变化多行文本框高度变化
+            多行文本框高度变化多行文本框高度变化多行文本框高度变化多行文本框高度变化
+            多行文本框高度变化多行文本框高度变化多行文本框高度变化多行文本框高度变化
+            多行文本框高度变化多行文本框高度变化
+        </textarea>
+    </div>
+</div>
+</body>
+</html>

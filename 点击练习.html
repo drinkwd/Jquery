@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:100px;height: 100px;background: red;display: none;}
+    </style>
+    <script>
+        window.onload=function () {
+            var onoff=true;
+            var oDiv=document.getElementsByTagName('div')[0];
+            var oBtn=document.getElementsByTagName('input')[0];
+            oBtn.onclick=function () {
+                if(onoff)
+                {
+                    oDiv.style.display='block';
+                    onoff=false;
+                }
+                else
+                {
+                    oDiv.style.display='none';
+                    onoff=true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<input type="button" value="你好"/>
+</body>
+</html>

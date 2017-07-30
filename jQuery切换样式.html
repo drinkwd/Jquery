@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:100px;height: 100px;background: red;display: block}
+    </style>
+    <script src="jQuery/jquery-3.1.1.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                $('div').toggle();
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<input type="button" value="隐藏" id="btn" />
+</body>
+</html>

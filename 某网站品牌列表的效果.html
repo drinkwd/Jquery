@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black
+        }
+
+        #list li {
+            float: left;
+            margin-left: 250px;
+            margin-top: 10px;
+        }
+
+        #showmore {
+            background: gray;
+            position: absolute;
+            left: 650px;
+            top: 200px;
+        }
+    </style>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            var onoff = true;
+            var $a = $('#list li:gt(5):not(:last)');
+            $a.hide();
+            var $btn = $('#showmore span');
+            $btn.click(function () {
+                if (onoff) {
+                    $a.show();
+                    $btn.html('精简显示品牌');
+                    $('#list li a').css('color', '#888');
+                    onoff = false;
+                }
+                else {
+                    $a.hide();
+                    $btn.html('显示全部品牌');
+                    $('#list li a').css('color', 'black');
+                    onoff = true;
+                }
+                return false;
+            })
+
+        })
+    </script>
+</head>
+<body>
+<div id="Box">
+    <ul id="list">
+        <li><a href="#">佳能</a><i>(30440)</i></li>
+        <li><a href="#">索尼</a><i>(30441)</i></li>
+        <li><a href="#">服饰</a><i>(30442)</i></li>
+        <li><a href="#">理光</a><i>(30443)</i></li>
+        <li><a href="#">铭记</a><i>(30444)</i></li>
+        <li><a href="#">oppo</a><i>(30445)</i></li>
+        <li><a href="#">vivo</a><i>(30446)</i></li>
+        <li><a href="#">爱国者</a><i>(30470)</i></li>
+        <li><a href="#">其他品牌</a><i>(37440)</i></li>
+        <li><a href="#">河大</a><i>(30447)</i></li>
+        <li><a href="#">宾利</a><i>(30430)</i></li>
+    </ul>
+    <div id="showmore">
+        <a href="#"><span>显示全部品牌</span></a>
+    </div>
+</div>
+</body>
+</html>

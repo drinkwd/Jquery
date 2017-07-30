@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //自定义事件 用trigger去模拟 第二个参数用数组的方式进行传递
+         /*   $('#btn').bind('click1',function () {
+                $('#test').append('<p>我的绑定函数1</p>');
+            }).bind('click1',function () {
+                $('#test').append('<p>我的绑定函数2</p>');
+            }).bind('click1',function () {
+                $('#test').append('<p>我的绑定函数3</p>');
+            })
+            $('#btn').trigger('click1');*/
+            $('#btn').bind('myclick',function (event,message1,message2) {
+                $('#test').append("<p>"+message1+message2+"</p>");
+            })
+            $('#btn').trigger('myclick',["我的自定义","事件"]);
+        })
+    </script>
+</head>
+<body>
+<button id="btn">点击我</button>
+<div id="test"></div>
+</body>
+</html>

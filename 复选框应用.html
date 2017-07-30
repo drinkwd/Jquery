@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('#checkedAll').click(function () {
+                //1.添加属性名称该属性就会生效应该使用prop();
+                //2.是有true,false两个属性使用prop();
+                //3.其他则使用attr();
+                $('[name=items]:checkbox').prop('checked',true);
+            });
+            $('#checkedNo').click(function () {
+                $('[name=items]:checkbox').prop('checked',false);
+            });
+            $('#checkedRev').click(function () {
+                $('[name=items]:checkbox').each(function () {
+                    this.checked=!this.checked;
+                })
+            })
+            $('#send').click(function () {
+                var str='你选中的是：\r\n'
+                $('[name=items]:checkbox:checked').each(function () {
+                    str+=$(this).val()+'\r\n'
+                })
+                alert(str);
+            })
+        })
+    </script>
+</head>
+<body>
+    <form>
+        你爱好的运动是?<br/>
+        <input type="checkbox" name="items" value="足球"/>足球
+        <input type="checkbox" name="items" value="乒乓球"/>乒乓球
+        <input type="checkbox" name="items" value="羽毛球"/>羽毛球
+        <input type="checkbox" name="items" value="篮球"/>篮球<br/>
+        <input type="button" id="checkedAll" value="全选"/>
+        <input type="button" id="checkedNo" value="全不选"/>
+        <input type="button" id="checkedRev" value="反选"/>
+        <input type="button" id="send" value="提交"/>
+    </form>
+</body>
+</html>

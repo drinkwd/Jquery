@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        window.onload=function () {
+            $('#btn').click(function () {
+                var item=$('input[type=checkbox]:checked');
+                alert(item.length);
+            })
+        }
+    </script>
+</head>
+<body>
+<input type="checkbox" value="1" name="check" checked="checked"/>
+<input type="checkbox" value="2" name="check" />
+<input type="checkbox" value="3" name="check" checked="checked"/>
+<input type="button" value="你选中的个数" id="btn"/>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('#btn').bind('click.g',function () {
+                $('body').append('<p>click事件</p>');
+            });
+            $('#btn').bind('click.i',function () {
+                $('body').append('<p>click.i事件</p>');
+            });
+            $('#test').click(function () {
+                //!在新版本当中取消了
+                $('#btn').trigger("click！");
+            })
+
+
+
+        })
+    </script>
+</head>
+<body>
+<button id="btn">点击我</button>
+<button id="test">点击我呢</button>
+</body>
+</html>

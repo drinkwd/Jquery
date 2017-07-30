@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('#panel h5.head').click(function () {
+                var content=$(this).next();
+                if(content.is(':visible'))
+                {
+                    content.hide();
+                }
+                else
+                {
+                    content.show('fast');
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+<div id="panel">
+    <h5 class="head">新闻标题</h5>
+    <div class="content">新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容新闻内容</div>
+</div>
+</body>
+</html>

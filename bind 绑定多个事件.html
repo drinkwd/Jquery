@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            height: 100px; width: 100px;background: red;  }
+        .over{border: 10px solid black}
+    </style>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //bind绑定多个事件类型
+            $('div').bind('mouseover mouseout',function () {
+                $(this).toggleClass('over');
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

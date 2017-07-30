@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $('#btn').bind('click',function () {
+                $('#test').append('<p>我的绑定函数1</p>');
+            }).bind('click',function () {
+                $('#test').append('<p>我的绑定函数2</p>');
+            }).bind('click',function () {
+                $('#test').append('<p>我的绑定函数3</p>');
+            })
+            $('#delAll').bind('click',function () {
+                $('#btn').unbind();
+            })
+        })
+    </script>
+</head>
+<body>
+<button id="btn">点击我</button>
+<div id="test"></div>
+<button id="delAll">删除所有事件</button>
+</body>
+</html>

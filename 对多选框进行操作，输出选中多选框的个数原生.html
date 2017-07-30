@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var aInput=document.getElementsByTagName('input');
+            var oBtn=document.getElementById('btn');
+            oBtn.onclick=function () {
+                var arr=[];
+                for(var i=0;i<aInput.length;i++)
+                {
+                    if(aInput[i].checked)
+                    {
+                        arr.push(aInput[i]);
+                    }
+                }
+                alert(arr.length);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" value="1" name="check" checked="checked"/>
+    <input type="checkbox" value="2" name="check" />
+    <input type="checkbox" value="3" name="check" checked="checked"/>
+    <input type="button" value="你选中的个数" id="btn"/>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oTable=document.getElementById('tab');
+            var aTr=oTable.getElementsByTagName('tr');
+            for(var i=0;i<aTr.length;i++)
+            {
+                if(i%2==0)
+                {
+                    aTr[i].style.background='red';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<table id="tab" border="1">
+    <tr><td>第一行</td><td>第一行</td></tr>
+    <tr><td>第二行</td><td>第二行</td></tr>
+    <tr><td>第三行</td><td>第三行</td></tr>
+    <tr><td>第四行</td><td>第四行</td></tr>
+    <tr><td>第五行</td><td>第五行</td></tr>
+    <tr><td>第六行</td><td>第六行</td></tr>
+</table>
+</body>
+</html>

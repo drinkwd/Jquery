@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oText=document.getElementById('text');
+            var oBtn=document.getElementById('btn');
+            oBtn.onclick=function () {
+                //var re=/^\w+@[0-9a-z]+\.[a-z]{2,4}$/;
+                var re=new RegExp('^\\w+@[0-9a-z]+\\.[a-z]{2,4}$');
+                if(re.test(oText.value))
+                {
+                    alert('正确');
+                }
+                else{
+                    alert("错误");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="text" />
+<input type="button"id="btn"value="验证"/>
+</body>
+</html>

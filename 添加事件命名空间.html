@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            //点之后的是命名空间  删除元素的事件直接删除元素的命名空间即可
+            $('div').bind('click.l',function () {
+                $('body').append('<p>click事件</p>')
+            }).bind('mouseover.l',function () {
+                $('body').append('<p>mouse事件</p>')
+            }).bind('dblclick',function () {
+                $('body').append('<p>dblclick事件</p>')
+            })
+            $('button').click(function () {
+                $('div').unbind('.l');
+            })
+        });
+
+    </script>
+</head>
+<body>
+<div style="background: red ;width: 100px;height: 100px"></div>
+<button>删除命名空间</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.tooltip').mouseover(function (e) {
+                //创建div元素
+                var tooltip=$('<div id="tooltip" style="position: absolute">'+this.title+'</div>');
+                $('body').append(tooltip);
+                $('#tooltip').css({"top":e.pageY+ 'px',"left":e.pageX+'px'}).show();
+            }).mouseout(function () {
+                $('#tooltip').remove();
+            })
+
+
+        })
+    </script>
+</head>
+<body>
+<p><a href="#" class="tooltip" title="这是我的链接提示1.">提示1</a></p>
+<p><a href="#" class="tooltip" title="这是我的链接提示2.">提示2</a></p>
+<p><a href="#"  >自动提示1</a></p>
+<p><a href="#"  >自动提示2</a></p>
+</body>
+</html>

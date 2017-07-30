@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            //查找元素节点
+            //var $li=$('ul li:eq(0)');
+            /*var $li=$('li:first');
+            var li_txt=$li.text();
+            alert(li_txt);*/
+            //查找属性节点
+            /*var $para=$('p');
+            var p_txt=$para.attr('title');
+            alert(p_txt);*/
+            //创建元素，文本，属性节点
+            $li_1=$('<li title="雪梨">雪梨</li>');
+            $li_2=$('<li title="柚子">柚子</li>');
+            $('ul').append($li_1);
+            $('ul').append($li_2);
+            //删除节点3中方法remove（），detach（）如果元素之前有事件再将该元素添加回来的时候事件还会存在
+            //这就是和remove不同的地方empty（）清空元素里的所有后代节点    “元素里”
+            var $li=$('ul li:eq(0)');
+            $li.remove();
+            $li.appendTo('ul');
+            //替换节点
+            $('p').replaceWith('<strong>你最不喜欢的水果</strong>');
+            $('ul li').click(function () {
+                //复制节点如果没有true更新后的节点没有复制功能
+                $(this).clone(true).appendTo('ul');
+            })
+            //包裹节点wrap（） 例：$('p').wrap('<b></b>');得到的结果<b><p></p></b>
+            //wrapAll()同时包含所有 wrapInner()包含文本节点
+        })
+    </script>
+</head>
+<body>
+<p title="选择你最喜欢的水果">选择你最喜欢的水果?</p>
+<ul>
+    <li title="苹果">苹果</li>
+    <li title="香蕉">香蕉</li>
+    <li title="橘子">橘子</li>
+</ul>
+</body>
+</html>

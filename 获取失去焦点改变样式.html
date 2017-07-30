@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*IE6不支持a标签以外的其他伪类*/
+        /*input:focus,textarea:focus{
+            border: 1px solid #f00;
+            background: #fcc;
+        }*/
+        .focse{
+            border: 1px solid #f00;
+            background: #fcc;}
+    </style>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(function () {
+            $(':input').focus(function () {
+                $(this).addClass('focse');
+            }).blur(function () {
+                $(this).removeClass('focse');
+            })
+        })
+    </script>
+</head>
+<body>
+<form action="#" method="post"id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">名称：</label>
+            <input id="username" type="text"/>
+        </div>
+        <div>
+            <label for="password">密码：</label>
+            <input id="password" type="text"/>
+        </div>
+        <div>
+            <label for="msg">详细信息：</label>
+            <textarea id="msg"></textarea>
+        </div>
+    </fieldset>
+    </form>
+</body>
+</html>

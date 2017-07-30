@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jQuery/jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#address').focus(function () {
+                var t=$(this).val();
+                if(t==this.defaultValue)
+                        //defaultValue默认的初始值value下面的也一样可以替换
+                {
+                    $(this).val('');
+                }
+            });
+            $('#address').blur(function () {
+                var t=$(this).val();
+                if(t=="")
+                {
+                    $(this).val('请输入邮箱地址');
+                }
+
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="text" value="请输入邮箱地址" id="address" />
+<input type="text" value="请输入密码" id="password" />
+</body>
+</html>
